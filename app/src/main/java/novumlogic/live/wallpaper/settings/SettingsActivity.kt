@@ -13,6 +13,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.widget.Toast
 import com.facebook.imagepipeline.common.ResizeOptions
 import com.facebook.imagepipeline.request.ImageRequestBuilder
 import com.google.android.gms.ads.AdRequest
@@ -64,9 +65,9 @@ class SettingsActivity : AppCompatActivity(), OnImageSelectedListener, OnAppItem
 
         setContentView(R.layout.activity_settings)
 
-        MobileAds.initialize(this, getString(R.string.admob_key))
-        val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
+//        MobileAds.initialize(this, getString(R.string.admob_key))
+//        val adRequest = AdRequest.Builder().build()
+//        adView.loadAd(adRequest)
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -77,17 +78,17 @@ class SettingsActivity : AppCompatActivity(), OnImageSelectedListener, OnAppItem
         rainDropSwitch.isChecked = fetchRainDropSetting()
 
         musicSwitch.setOnCheckedChangeListener { _, p1 ->
-            showAdIfApplicable()
+
             saveBackgroundMusicSetting(p1)
         }
 
         rippleSwitch.setOnCheckedChangeListener { _, p1 ->
-            showAdIfApplicable()
+
             saveRippleSetting(p1)
         }
 
         rainDropSwitch.setOnCheckedChangeListener { _, p1 ->
-            showAdIfApplicable()
+
             saveRainDropSetting(p1)
         }
 
@@ -199,8 +200,8 @@ class SettingsActivity : AppCompatActivity(), OnImageSelectedListener, OnAppItem
      */
     override fun onImageSelected(imageURI: String, imageId: String) {
         val imagePath = ImageUtils.loadFilePathFromStorage(this, imageId)
-        if (imagePath == "" && !checkInternetConnection()) {
-            showNoInternetDialog()
+        if (imagePath == "" ) {
+            Toast.makeText(applicationContext,"Error",Toast.LENGTH_SHORT).show()
         } else {
             saveWallpaperType(AppConstants.WallpaperType.ONLINE_IMAGE.typeId)
             constraintFromGallery.background = ContextCompat.getDrawable(this, R.drawable.option_unselected)

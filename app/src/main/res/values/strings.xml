@@ -19,8 +19,8 @@
     <!--<string name="admob_interstitial_unit_id_key">ca-app-pub-3940256099942544/1033173712</string>-->
 
     <string name="label_choose_from_gallery_max_10">Choose From Gallery (Max. 10)</string>
-    <string name="label_choose_online_images">Choose Online Images</string>
-    <string name="msg_2_min_wallpaper_change_set">Auto wallpaper changer set successfully. Enjoy a new wallpaper every 2 minutes</string>
+    <string name="label_choose_online_images">Choose From Default Images</string>
+    <string name="msg_2_min_wallpaper_change_set">Auto wallpaper changer set successfully. Enjoy a new wallpaper every 24 Hour</string>
     <string name="msg_enable_wallpaper_changer">Enable Wallpaper Changer</string>
     <string name="msg_max_images_auto_change">Maximum 10 images allowed</string>
     <string name="msg_min_images_auto_change">Select at least 2 images</string>

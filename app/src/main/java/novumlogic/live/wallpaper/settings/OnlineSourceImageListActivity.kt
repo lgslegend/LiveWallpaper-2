@@ -6,13 +6,20 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_image_list.*
+import kotlinx.android.synthetic.main.activity_image_list.backDrop
+import kotlinx.android.synthetic.main.activity_image_list.recyclerBackgroundImages
+import kotlinx.android.synthetic.main.activity_image_list.toolbar
+import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.progress_dialog.*
 import novumlogic.live.wallpaper.R
 import novumlogic.live.wallpaper.apiHelper.APIResponseModel
 import novumlogic.live.wallpaper.apiHelper.ApiConfig
+import novumlogic.live.wallpaper.apiHelper.Wallpaper
+import novumlogic.live.wallpaper.settings.adapter.ImageListAdapter
 import novumlogic.live.wallpaper.settings.adapter.OnlineSourceImageListAdapter
 import novumlogic.live.wallpaper.utility.*
 
@@ -41,8 +48,8 @@ class OnlineSourceImageListActivity : AppCompatActivity() {
                 else -> setAutoWallpaperChangeFromOnline(map)
             }
         }
-
-        processResponse(fetchAPIInfo())
+loaddatata()
+//        processResponse(fetchAPIInfo())
     }
 
     // toolbar back press event
@@ -69,7 +76,7 @@ class OnlineSourceImageListActivity : AppCompatActivity() {
                 cardProgress.visibility = View.GONE
                 backDrop.visibility = View.GONE
                 if (hasPendingDownload) {
-                    showNoInternetDialog(isSuccess)
+//                    showNoInternetDialog(isSuccess)
                 } else {
                     proceedWithAutoWallpaperSet(isSuccess)
                 }
@@ -112,22 +119,49 @@ class OnlineSourceImageListActivity : AppCompatActivity() {
         }
     }
 
-    private fun processResponse(response: APIResponseModel?) {
-        progressBar.visibility = View.GONE
-        if (response?.appDatumModels != null && response.appDatumModels.isNotEmpty()) {
-            emptyText.visibility = View.GONE
-            val listOfImages = response.appDatumModels[0].wallpapers as MutableList
-            imageListAdapter = OnlineSourceImageListAdapter(listOfImages)
 
-            recyclerBackgroundImages.layoutManager = GridLayoutManager(this, 3)
-            recyclerBackgroundImages.setHasFixedSize(true)
-            recyclerBackgroundImages.setItemViewCacheSize(0)
-            recyclerBackgroundImages.adapter = imageListAdapter
-        } else {
-            emptyText.visibility = View.VISIBLE
-            emptyText.text = "No Images Found"
-        }
+    private fun loaddatata(){
+//        val cars = listOf(Wallpaper("0", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("1", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("2", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("3", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("4", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("5", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg") )
+        var img=R.drawable.default_image
+//        val cars = listOf(Wallpaper("0", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("1", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("2", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("3", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("4", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("5", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg") )
+        val arrayList = ArrayList<Wallpaper>()//Creating an empty arraylist
+        arrayList.add(Wallpaper("0", "0", (R.drawable.img1).toString()))//Adding object in arraylist
+        arrayList.add(Wallpaper("1", "1", (R.drawable.img2).toString()))//Adding object in arraylist
+        arrayList.add(Wallpaper("2", "2", (R.drawable.img3).toString()))//Adding object in arraylist
+        arrayList.add(Wallpaper("3", "3", (R.drawable.img4).toString()))//Adding object in arraylist
+        arrayList.add(Wallpaper("4", "4", (R.drawable.img5).toString()))//Adding object in arraylist
+        arrayList.add(Wallpaper("5", "5", (R.drawable.img6).toString()))//Adding object in arraylist
+        arrayList.add(Wallpaper("6", "6", (R.drawable.img7).toString()))//Adding object in arraylist
+        arrayList.add(Wallpaper("7", "7", (R.drawable.img8).toString()))//Adding object in arraylist
+
+
+
+
+
+        imageListAdapter = OnlineSourceImageListAdapter(arrayList)
+
+        recyclerBackgroundImages.layoutManager = GridLayoutManager(this, 3)
+        recyclerBackgroundImages.setHasFixedSize(true)
+        recyclerBackgroundImages.setItemViewCacheSize(0)
+        recyclerBackgroundImages.adapter = imageListAdapter
+
     }
+//    private fun processResponse(response: APIResponseModel?) {
+//        progressBar.visibility = View.GONE
+//        if (response?.appDatumModels != null && response.appDatumModels.isNotEmpty()) {
+//            emptyText.visibility = View.GONE
+//            val listOfImages = response.appDatumModels[0].wallpapers as MutableList
+//            imageListAdapter = OnlineSourceImageListAdapter(listOfImages)
+//
+//            recyclerBackgroundImages.layoutManager = GridLayoutManager(this, 3)
+//            recyclerBackgroundImages.setHasFixedSize(true)
+//            recyclerBackgroundImages.setItemViewCacheSize(0)
+//            recyclerBackgroundImages.adapter = imageListAdapter
+//        } else {
+//            emptyText.visibility = View.VISIBLE
+//            emptyText.text = "No Images Found"
+//        }
+//    }
 
     private fun showNoInternetDialog(isSuccess: Boolean) {
         val alertDialogBuilder = AlertDialog.Builder(this)
