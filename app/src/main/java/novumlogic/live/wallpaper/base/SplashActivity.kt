@@ -9,24 +9,21 @@ import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
 import android.view.WindowManager
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
-import com.google.android.gms.ads.MobileAds
+
 import com.google.firebase.FirebaseApp
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import novumlogic.live.wallpaper.R
-import novumlogic.live.wallpaper.base.listener.OnAdClosedListener
+
 import novumlogic.live.wallpaper.utility.*
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 
-class SplashActivity : AppCompatActivity(), OnAdClosedListener {
+class SplashActivity : AppCompatActivity() {
     var startTime: Long = 0
-    private var mInterstitialAd: InterstitialAd? = null
+
     private var isFirstTime = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +32,7 @@ class SplashActivity : AppCompatActivity(), OnAdClosedListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_splash)
-        FirebaseApp.initializeApp(applicationContext)
+//        FirebaseApp.initializeApp(applicationContext)
         startTime = System.currentTimeMillis()
     }
 
@@ -45,17 +42,12 @@ class SplashActivity : AppCompatActivity(), OnAdClosedListener {
             isFirstTime = false
 
             GlobalScope.launch {
-                val isAdLoaded = async { initializeAndLoadAd() }
-                if (isAdLoaded.await()) {
-                    runOnUiThread {
-                        checkSplashMinTime()
-                    }
-                } else {
+
                     openLiveWallpaperPreview()
-                }
+
             }
-        } else {
-            openLiveWallpaperPreview()
+
+
         }
     }
 
@@ -76,15 +68,6 @@ class SplashActivity : AppCompatActivity(), OnAdClosedListener {
         }
     }
 
-    private fun checkSplashMinTime() {
-        if (System.currentTimeMillis() - startTime < 5000) {
-            Handler(mainLooper).postDelayed({
-                showInterstitialAd()
-            }, 5000 - (System.currentTimeMillis() - startTime))
-        } else {
-            showInterstitialAd()
-        }
-    }
 
     private fun openLiveWallpaperPreview() {
         if (fetchWallpaperType() == AppConstants.WallpaperType.AUTO_ROTATE_GALLERY.typeId || fetchWallpaperType() == AppConstants.WallpaperType.GALLERY.typeId) {
@@ -104,38 +87,8 @@ class SplashActivity : AppCompatActivity(), OnAdClosedListener {
         }
     }
 
-    override fun onAdClosed() {
-        openLiveWallpaperPreview()
-    }
 
-    private suspend fun initializeAndLoadAd(): Boolean = suspendCoroutine { continuation ->
-        MobileAds.initialize(this, getString(R.string.admob_key))
-        mInterstitialAd = InterstitialAd(this).apply {
-            adUnitId = getString(R.string.admob_interstitial_unit_id_key)
-            adListener = (object : AdListener() {
-                override fun onAdClosed() {
-                    this@SplashActivity.onAdClosed()
-                }
 
-                override fun onAdLoaded() {
-                    super.onAdLoaded()
-                    continuation.resume(true)
-                }
 
-                override fun onAdFailedToLoad(p0: Int) {
-                    super.onAdFailedToLoad(p0)
-                    continuation.resume(false)
-                }
-            })
-        }
-        runOnUiThread {
-            mInterstitialAd?.loadAd(AdRequest.Builder().build())
-        }
-    }
 
-    private fun showInterstitialAd() {
-        if (mInterstitialAd != null && mInterstitialAd!!.isLoaded) {
-            mInterstitialAd?.show()
-        }
-    }
 }

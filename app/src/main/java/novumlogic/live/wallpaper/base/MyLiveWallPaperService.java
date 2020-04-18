@@ -19,7 +19,7 @@ public class MyLiveWallPaperService extends AndroidLiveWallpaperService {
     public void onCreate() {
         super.onCreate();
         this.sharedPreferences = getSharedPreferences(getPackageName(), 0);
-        ExtensionsKt.initAd(getApplicationContext());
+//        ExtensionsKt.initAd(getApplicationContext());
     }
 
     public void onDestroy() {

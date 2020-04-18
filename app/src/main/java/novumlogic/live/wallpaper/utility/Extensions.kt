@@ -9,49 +9,10 @@ import android.provider.Settings
 import android.support.v7.app.AlertDialog
 import android.view.View
 import android.view.WindowManager
-import com.google.android.gms.ads.AdListener
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
-import com.google.android.gms.ads.MobileAds
+
 import novumlogic.live.wallpaper.R
 
 
-/**
- * Created by Priya Sindkar.
- */
-var mInterstitialAd: InterstitialAd? = null
-var clickCounter = 0
-//var onAdClosedListener: OnAdClosedListener? = null
-
-@JvmName(name = "initAd")
-fun Context.initAd() {
-    MobileAds.initialize(this, getString(R.string.admob_key))
-    mInterstitialAd = InterstitialAd(this).apply {
-        adUnitId = getString(R.string.admob_interstitial_unit_id_key)
-        adListener = (object : AdListener() {
-            override fun onAdClosed() {
-                mInterstitialAd?.loadAd(AdRequest.Builder().build())
-            }
-        })
-    }
-    mInterstitialAd?.loadAd(AdRequest.Builder().build())
-}
-
-fun Context.showAdIfApplicable() {
-    clickCounter++
-    if (clickCounter == 3) {
-        clickCounter = 0
-        if (mInterstitialAd != null && mInterstitialAd!!.isLoaded) {
-            mInterstitialAd?.show()
-        }
-    }
-}
-
-fun Context.showAd() {
-    if (mInterstitialAd != null && mInterstitialAd!!.isLoaded) {
-        mInterstitialAd?.show()
-    }
-}
 
 
 fun Activity.enableUserTouch() {

@@ -16,8 +16,7 @@ import android.view.View
 import android.widget.Toast
 import com.facebook.imagepipeline.common.ResizeOptions
 import com.facebook.imagepipeline.request.ImageRequestBuilder
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.MobileAds
+
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
 import com.google.firebase.iid.InstanceIdResult
@@ -46,9 +45,6 @@ import java.io.IOException
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
-/**
- * Created by Priya Sindkar.
- */
 class SettingsActivity : AppCompatActivity(), OnImageSelectedListener, OnAppItemSelectedListener, OnAutoWallpaperSourceSelected {
 
     private val SELECT_FILE = 1
@@ -65,9 +61,6 @@ class SettingsActivity : AppCompatActivity(), OnImageSelectedListener, OnAppItem
 
         setContentView(R.layout.activity_settings)
 
-//        MobileAds.initialize(this, getString(R.string.admob_key))
-//        val adRequest = AdRequest.Builder().build()
-//        adView.loadAd(adRequest)
 
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)

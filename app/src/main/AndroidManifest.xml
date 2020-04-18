@@ -16,9 +16,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/admob_key"/>
 
         <activity android:name=".base.SplashActivity">
             <intent-filter>
@@ -55,11 +52,7 @@
                 android:resource="@xml/wallpaper"/>
         </service>
 
-        <service android:name=".fcm.MyFirebaseMessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
+
     </application>
 
 </manifest>
