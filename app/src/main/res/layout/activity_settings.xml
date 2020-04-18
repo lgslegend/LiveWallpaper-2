@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:theme="@style/ToolbarTheme"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:title="Personalize"
+        app:titleTextColor="@color/colorText" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/margin_8"
+        app:layout_constraintBottom_toTopOf="@id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintInnerDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_8">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtMusicOption"
+                style="@style/TitleTextTheme"
+                android:layout_margin="@dimen/margin_8"
+                android:gravity="center"
+                android:text="Enable / Disable Music"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtMusicOptionDetails"
+                style="@style/SubTitleTextTheme"
+                android:gravity="center"
+                android:paddingBottom="@dimen/margin_16"
+                android:text="Add music to your live wallpaper"
+                app:layout_constraintStart_toStartOf="@id/txtMusicOption"
+                app:layout_constraintTop_toBottomOf="@id/txtMusicOption" />
+
+            <Switch
+                android:id="@+id/musicSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:padding="@dimen/margin_8"
+                app:layout_constraintBottom_toBottomOf="@+id/txtMusicOptionDetails"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtMusicOption" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtRippleOption"
+                style="@style/TitleTextTheme"
+                android:layout_margin="@dimen/margin_8"
+                android:gravity="center"
+                android:text="Enable / Disable Ripple Effect"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtMusicOptionDetails" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtRippleOptionDetails"
+                style="@style/SubTitleTextTheme"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:paddingBottom="@dimen/margin_16"
+                android:text="Tap the wallpaper for stunning ripple effect"
+                app:layout_constraintEnd_toStartOf="@+id/rippleSwitch"
+                app:layout_constraintStart_toStartOf="@id/txtRippleOption"
+                app:layout_constraintTop_toBottomOf="@id/txtRippleOption" />
+
+            <Switch
+                android:id="@+id/rippleSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:padding="@dimen/margin_8"
+                app:layout_constraintBottom_toBottomOf="@+id/txtRippleOptionDetails"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtRippleOption" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtRainDropOption"
+                style="@style/TitleTextTheme"
+                android:layout_margin="@dimen/margin_8"
+                android:gravity="center"
+                android:text="Enable / Disable Rain Drops"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtRippleOptionDetails" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtRainDropDetails"
+                style="@style/SubTitleTextTheme"
+                android:layout_width="0dp"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:paddingBottom="@dimen/margin_16"
+                android:text="Enjoy rain drop effect on your wallpaper"
+                app:layout_constraintEnd_toStartOf="@+id/rainDropSwitch"
+                app:layout_constraintStart_toStartOf="@id/txtRainDropOption"
+                app:layout_constraintTop_toBottomOf="@id/txtRainDropOption" />
+
+            <Switch
+                android:id="@+id/rainDropSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:checked="true"
+                android:padding="@dimen/margin_8"
+                app:layout_constraintBottom_toBottomOf="@+id/txtRainDropDetails"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtRainDropOption" />
+
+            <View
+                android:id="@+id/dividerRainDrop"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_margin="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtRainDropDetails" />
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/checkChooseFromGallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/constraintFromGallery"
+                app:layout_constraintTop_toTopOf="@id/constraintFromGallery"
+                app:srcCompat="@drawable/ic_checked" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintFromGallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/margin_16"
+                android:background="@drawable/option_unselected"
+                android:padding="@dimen/margin_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerRainDrop">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtChooseFromGallery"
+                    style="@style/TitleTextTheme"
+                    android:layout_width="0dp"
+                    android:text="Choose Background From Gallery"
+                    app:layout_constraintEnd_toStartOf="@id/imgGalleryPreview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtChooseFromGalleryDetails"
+                    style="@style/SubTitleTextTheme"
+                    android:layout_width="0dp"
+                    android:text="Choose Background Image From Gallery"
+                    app:layout_constraintEnd_toStartOf="@id/imgGalleryPreview"
+                    app:layout_constraintStart_toStartOf="@id/txtChooseFromGallery"
+                    app:layout_constraintTop_toBottomOf="@id/txtChooseFromGallery" />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/imgGalleryPreview"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="@dimen/margin_8"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:roundedCornerRadius="@dimen/padding_4" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/checkChooseImages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/constraintChooseImages"
+                app:layout_constraintTop_toTopOf="@id/constraintChooseImages"
+                app:srcCompat="@drawable/ic_checked" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintChooseImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/option_unselected"
+                android:padding="@dimen/margin_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintFromGallery">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtChooseImageOption"
+                    style="@style/TitleTextTheme"
+                    android:gravity="center"
+                    android:text="Choose Background Image"
+                    app:layout_constraintEnd_toStartOf="@id/txtViewAll"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtViewAll"
+                    style="@style/SubTitleTextTheme"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/margin_8"
+                    android:paddingBottom="@dimen/margin_8"
+                    android:text="View All"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtChooseImageOptionDetails"
+                    style="@style/SubTitleTextTheme"
+                    android:gravity="center"
+                    android:text="Wide variety. Set new wallpaper everyday"
+                    app:layout_constraintStart_toStartOf="@id/txtChooseImageOption"
+                    app:layout_constraintTop_toBottomOf="@id/txtChooseImageOption" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarImageList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txtChooseImageOptionDetails" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerBackgroundImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txtChooseImageOptionDetails" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_32"
+                    app:layout_constraintBottom_toBottomOf="@id/recyclerBackgroundImages"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/recyclerBackgroundImages"
+                    app:layout_constraintTop_toTopOf="@id/recyclerBackgroundImages"
+                    app:srcCompat="@drawable/ic_arrow_right" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/constraintWallpaperCycle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/option_unselected"
+                android:padding="@dimen/margin_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintChooseImages">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtChooseWallpaperChanger"
+                    style="@style/TitleTextTheme"
+                    android:gravity="center"
+                    android:text="@string/msg_enable_wallpaper_changer"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtChooseWallpaperChangerDetails"
+                    style="@style/SubTitleTextTheme"
+                    android:gravity="center"
+                    android:text="@string/label_auto_wallpaper_details"
+                    app:layout_constraintStart_toStartOf="@id/txtChooseWallpaperChanger"
+                    app:layout_constraintTop_toBottomOf="@id/txtChooseWallpaperChanger" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <View
+                android:id="@+id/dividerWallpaperChanger"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constraintWallpaperCycle" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtChooseAppOption"
+                style="@style/TitleTextTheme"
+                android:layout_margin="@dimen/margin_8"
+                android:gravity="center"
+                android:padding="@dimen/padding_4"
+                android:text="More apps"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerWallpaperChanger" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtChooseAppOptionDetails"
+                style="@style/SubTitleTextTheme"
+                android:gravity="center"
+                android:paddingLeft="@dimen/padding_4"
+                android:text="Experience all our stunning apps"
+                app:layout_constraintStart_toStartOf="@id/txtChooseAppOption"
+                app:layout_constraintTop_toBottomOf="@id/txtChooseAppOption" />
+
+            <ProgressBar
+                android:id="@+id/progressBarApps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtChooseAppOptionDetails" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerApps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8"
+                app:layout_constraintTop_toBottomOf="@id/txtChooseAppOptionDetails" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <include layout="@layout/progress_dialog"/>
+
+    <View
+        android:id="@+id/backDrop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/backdrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/admob_banner_unit_id_key"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toBottomOf="@id/nestedScroll" />
+
+
+</android.support.constraint.ConstraintLayout>

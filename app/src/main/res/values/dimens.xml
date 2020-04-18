@@ -1,0 +1,85 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">125dp</dimen><!--176 original-->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="height_component">40dp</dimen>
+
+    <!--Reducing space between navigationdrawer menuitem-->
+    <dimen name="design_navigation_separator_vertical_padding">0dp</dimen>
+
+    <!--navigation drawer width-->
+    <dimen name="navigation_drawer_width">200dp</dimen>
+
+    <!--padding size-->
+    <dimen name="padding_small_5">5dp</dimen>
+    <dimen name="padding_4">4dp</dimen>
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_large_10">10dp</dimen>
+    <dimen name="padding_large_14">14dp</dimen>
+    <dimen name="padding_big_20">20dp</dimen>
+    <dimen name="padding_25">25dp</dimen>
+    <dimen name="padding_xl_15">15dp</dimen>
+    <dimen name="padding_xxl_35">35dp</dimen>
+
+    <!--margin size-->
+    <dimen name="margin_1">1dp</dimen>
+    <dimen name="margin_2">2dp</dimen>
+    // only for home screen use
+    <dimen name="home_margin">8dp</dimen>
+    // take this as standard margin (top and bottom) for all components for phone and tablet layouts
+    <dimen name="margin_8">8dp</dimen>
+    // use this for margins (left, right, start, end) for all components for phoen and tablet
+    layouts
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_12">12dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_30">30dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
+    <dimen name="margin_47">47dp</dimen>
+    <dimen name="margin_tiny">10dp</dimen>
+    <dimen name="margin_large">60dp</dimen>
+    <dimen name="margin_grand">80dp</dimen>
+    <dimen name="icon_size">50dp</dimen>
+
+
+    <!--text size-->
+    <dimen name="text_auto_fit_granularity">2sp</dimen>
+    <dimen name="text_tiny_11">11sp</dimen>
+    <dimen name="text_medium_13">13sp</dimen>
+    <dimen name="text_small_14">14sp</dimen>
+    <dimen name="text_large_16">16sp</dimen>
+    <dimen name="text_large_18">18sp</dimen>
+    <dimen name="text_large_20">20sp</dimen>
+    <dimen name="text_large_24">24sp</dimen>
+    <dimen name="text_large_30">30sp</dimen>
+    <dimen name="text_grand_45">45sp</dimen>
+
+    <!--searchview size-->
+    <dimen name="search_height">35dp</dimen>
+
+    <!--other-->
+    <dimen name="cardradius">5dp</dimen>
+    <dimen name="cardhomeradius">2dp</dimen>
+    <dimen name="logincard_top">40dp</dimen>
+    <dimen name="btm_circuit_height">180dp</dimen>
+    <dimen name="top_circuit_height">180dp</dimen>
+    <dimen name="logo_size_standard">60dp</dimen>
+    <dimen name="home_logo_size">150dp</dimen>
+    <dimen name="controls_edit_image_size">25dp</dimen>
+
+    <dimen name="nav_text_size">14sp</dimen>
+    <dimen name="nav_round_initial_size">50dp</dimen>
+    <dimen name="dimmer_progress_thumb_size">20dp</dimen>
+    <dimen name="dimmer_progress_thumb_border">1dp</dimen>
+    <dimen name="image_display_size">80dp</dimen>
+    <dimen name="dashboard_room_item_size">120dp</dimen>
+    <dimen name="dashboard_remote_item_size">100dp</dimen>
+    <dimen name="dashboard_remote_item_corner_radius">50dp</dimen>
+    <dimen name="update_image_size">200dp</dimen>
+    <dimen name="update_image_padding">100dp</dimen>
+    <dimen name="touch_panel_grid_item_size">50dp</dimen>
+    <dimen name="touch_panel_icon_size">20dp</dimen>
+</resources>

@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Live Wallpaper</string>
+    <string name="wallpaper_service_label">Live Wallpaper</string>
+    <string name="label_allow">Allow</string>
+    <string name="label_deny">Deny</string>
+    <string name="msg_need_permission_access">Allow permission to access gallery</string>
+    <string name="label_take_photo">Take Photo</string>
+    <string name="label_choose_from_library">Choose from Library</string>
+    <string name="label_select_image">Select Image</string>
+    <string name="label_add_photo">Add Photo!</string>
+    <string name="label_cancel">Cancel</string>
+    <!-- live wp ad ids -->
+    <string name="admob_key">ca-app-pub-9389063472515456~5591936989</string>
+    <string name="admob_banner_unit_id_key">ca-app-pub-9389063472515456/6858338079</string>
+    <string name="admob_interstitial_unit_id_key">ca-app-pub-9389063472515456/5642566546</string>
+
+    <!--<string name="admob_key">ca-app-pub-3940256099942544~3347511713</string>-->
+    <!--<string name="admob_banner_unit_id_key">ca-app-pub-3940256099942544/6300978111</string>-->
+    <!--<string name="admob_interstitial_unit_id_key">ca-app-pub-3940256099942544/1033173712</string>-->
+
+    <string name="label_choose_from_gallery_max_10">Choose From Gallery (Max. 10)</string>
+    <string name="label_choose_online_images">Choose Online Images</string>
+    <string name="msg_2_min_wallpaper_change_set">Auto wallpaper changer set successfully. Enjoy a new wallpaper every 2 minutes</string>
+    <string name="msg_enable_wallpaper_changer">Enable Wallpaper Changer</string>
+    <string name="msg_max_images_auto_change">Maximum 10 images allowed</string>
+    <string name="msg_min_images_auto_change">Select at least 2 images</string>
+    <string name="msg_min_images_auto_change_internet">Some of the images were not downloaded due to no internet connection. </string>
+    <string name="action_delete">Delete</string>
+    <string name="action_add">Add More</string>
+    <string name="msg_err_max_image_selection">Max. 10 images allowed. Remove from selected images to add.</string>
+    <string name="action_save">Save</string>
+    <string name="label_set">Set Wallpaper Changer</string>
+    <string name="label_auto_wallpaper_details">Auto change wallpaper every 2 mins</string>
+    <string name="label_choose_source">Choose Image Source</string>
+    <string name="msg_empty_image_list">No Images Selected. Click \'+\' to add</string>
+    <string name="msg_check_internet">Please check your Internet connection.</string>
+    <string name="label_go_to_settings">Go to Settings</string>
+    <string name="label_okay">Ok</string>
+    <string name="msg_require_2_downloads">Require at least 2 downloaded images to proceed.</string>
+</resources>
