@@ -55,14 +55,7 @@ class SettingsActivity : AppCompatActivity(), OnImageSelectedListener, OnAppItem
     private var selectedImagePath: String = ""
     private var listOfImages = ArrayList<Wallpaper>()
 
-    var imageIdList = arrayOf<Int>(
-            R.drawable.backdrop,
-            R.drawable.backdrop,
-            R.drawable.backdrop,
-            R.drawable.backdrop,
-            R.drawable.backdrop,
-            R.drawable.backdrop,
-            R.drawable.backdrop)
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -334,68 +327,68 @@ class SettingsActivity : AppCompatActivity(), OnImageSelectedListener, OnAppItem
         recyclerBackgroundImages.adapter = imageListAdapter
 
     }
-    private fun fetchDataFromAPI(fcmToken: String) {
-        val fields = Build.VERSION_CODES::class.java.fields
-        val osName = fields[Build.VERSION.SDK_INT].name
-
-        ApiConfig.getRetrofit(ApiConfig.BASE_URL).create(ApiService::class.java)
-                .fetchApiData(Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID), fcmToken, osName).enqueue(
-                        object : Callback<APIResponseModel> {
-                            override fun onFailure(call: Call<APIResponseModel>, t: Throwable) {
-                                processResponse(fetchAPIInfo())
-                            }
-
-                            override fun onResponse(call: Call<APIResponseModel>, response: Response<APIResponseModel>) {
-                                if (response != null && response.isSuccessful && response.body() != null) {
-                                    saveAPIInfo(response.body()!!)//getSharedPreferences(AppConstants.APP_PREFS_CONTEXT, 0).edit().putString(AppConstants.APP_IMAGE_INFO, Gson().toJson(response.body())).apply()
-                                    processResponse(response.body()!!)
-                                }
-                            }
-                        })
-    }
+//    private fun fetchDataFromAPI(fcmToken: String) {
+//        val fields = Build.VERSION_CODES::class.java.fields
+//        val osName = fields[Build.VERSION.SDK_INT].name
+//
+//        ApiConfig.getRetrofit(ApiConfig.BASE_URL).create(ApiService::class.java)
+//                .fetchApiData(Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID), fcmToken, osName).enqueue(
+//                        object : Callback<APIResponseModel> {
+//                            override fun onFailure(call: Call<APIResponseModel>, t: Throwable) {
+//                                processResponse(fetchAPIInfo())
+//                            }
+//
+//                            override fun onResponse(call: Call<APIResponseModel>, response: Response<APIResponseModel>) {
+//                                if (response != null && response.isSuccessful && response.body() != null) {
+//                                    saveAPIInfo(response.body()!!)//getSharedPreferences(AppConstants.APP_PREFS_CONTEXT, 0).edit().putString(AppConstants.APP_IMAGE_INFO, Gson().toJson(response.body())).apply()
+//                                    processResponse(response.body()!!)
+//                                }
+//                            }
+//                        })
+//    }
 
     /**
      *
      * Process API response and show data to user
      */
-    private fun processResponse(response: APIResponseModel?) {
-        if (response?.appDatumModels != null && response.appDatumModels.isNotEmpty()) {
+//    private fun processResponse(response: APIResponseModel?) {
+//        if (response?.appDatumModels != null && response.appDatumModels.isNotEmpty()) {
+//
+//            val cars = listOf(Wallpaper("0", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("1", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg") )
+//            val listOfImages = cars as MutableList
+//            this.listOfImages = listOfImages as ArrayList<Wallpaper>
+//             //listOfImages.toMutableList().add(Wallpaper(0,"aaa","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"))
+//
+//            val listOfMoreApps = response.appDatumModels[0].moreApps
+//
+//            val previewImageSelected = fetchImageToPreview()
+//            val imageListAdapter = if (previewImageSelected.isNullOrEmpty() || fetchWallpaperType() != AppConstants.WallpaperType.ONLINE_IMAGE.typeId) {
+//                ImageListAdapter(listOfImages.subList(0, 3), this)
+//            } else {
+//                val imageId = previewImageSelected.substringAfterLast("/")
+//                val listToDisplay = listOfImages.filter { it.id != imageId } as MutableList<Wallpaper>
+//                listToDisplay.add(0, Wallpaper(imageId, "", previewImageSelected))
+//                ImageListAdapter(listToDisplay.subList(0, 3), this)
+//            }
+//
+//            recyclerBackgroundImages.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+//            recyclerBackgroundImages.setHasFixedSize(true)
+//            recyclerBackgroundImages.setItemViewCacheSize(0)
+//            recyclerBackgroundImages.adapter = imageListAdapter
+//
+//            val appsListAdapter = AppsListAdapter(listOfMoreApps, this)
+//            recyclerApps.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+//            recyclerApps.setHasFixedSize(true)
+//            recyclerApps.setItemViewCacheSize(0)
+//            recyclerApps.adapter = appsListAdapter
+//        }
+//
+//    }
 
-            val cars = listOf(Wallpaper("0", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"), Wallpaper("1", "6300","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg") )
-            val listOfImages = cars as MutableList
-            this.listOfImages = listOfImages as ArrayList<Wallpaper>
-             //listOfImages.toMutableList().add(Wallpaper(0,"aaa","https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832__340.jpg"))
-
-            val listOfMoreApps = response.appDatumModels[0].moreApps
-
-            val previewImageSelected = fetchImageToPreview()
-            val imageListAdapter = if (previewImageSelected.isNullOrEmpty() || fetchWallpaperType() != AppConstants.WallpaperType.ONLINE_IMAGE.typeId) {
-                ImageListAdapter(listOfImages.subList(0, 3), this)
-            } else {
-                val imageId = previewImageSelected.substringAfterLast("/")
-                val listToDisplay = listOfImages.filter { it.id != imageId } as MutableList<Wallpaper>
-                listToDisplay.add(0, Wallpaper(imageId, "", previewImageSelected))
-                ImageListAdapter(listToDisplay.subList(0, 3), this)
-            }
-
-            recyclerBackgroundImages.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-            recyclerBackgroundImages.setHasFixedSize(true)
-            recyclerBackgroundImages.setItemViewCacheSize(0)
-            recyclerBackgroundImages.adapter = imageListAdapter
-
-            val appsListAdapter = AppsListAdapter(listOfMoreApps, this)
-            recyclerApps.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-            recyclerApps.setHasFixedSize(true)
-            recyclerApps.setItemViewCacheSize(0)
-            recyclerApps.adapter = appsListAdapter
-        }
-        hideProgress()
-    }
-
-    private fun hideProgress() {
-        progressBarImageList.visibility = View.GONE
-        progressBarApps.visibility = View.GONE
-    }
+//    private fun   {
+//        progressBarImageList.visibility = View.GONE
+//        progressBarApps.visibility = View.GONE
+//    }
 
     /**
      *

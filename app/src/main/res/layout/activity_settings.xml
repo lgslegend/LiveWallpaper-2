@@ -241,7 +241,7 @@
                     android:id="@+id/progressBarImageList"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
+                    android:visibility="invisible"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txtChooseImageOptionDetails" />
@@ -297,63 +297,63 @@
 
             </android.support.constraint.ConstraintLayout>
 
-            <View
-                android:id="@+id/dividerWallpaperChanger"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginLeft="@dimen/margin_8"
-                android:layout_marginTop="@dimen/margin_16"
-                android:layout_marginRight="@dimen/margin_8"
-                android:layout_marginBottom="@dimen/margin_16"
-                android:background="@android:color/darker_gray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/constraintWallpaperCycle" />
+<!--            <View-->
+<!--                android:id="@+id/dividerWallpaperChanger"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0.5dp"-->
+<!--                android:layout_marginLeft="@dimen/margin_8"-->
+<!--                android:layout_marginTop="@dimen/margin_16"-->
+<!--                android:layout_marginRight="@dimen/margin_8"-->
+<!--                android:layout_marginBottom="@dimen/margin_16"-->
+<!--                android:background="@android:color/darker_gray"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/constraintWallpaperCycle" />-->
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/txtChooseAppOption"
-                style="@style/TitleTextTheme"
-                android:layout_margin="@dimen/margin_8"
-                android:gravity="center"
-                android:padding="@dimen/padding_4"
-                android:text="More apps"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/dividerWallpaperChanger" />
+<!--            <android.support.v7.widget.AppCompatTextView-->
+<!--                android:id="@+id/txtChooseAppOption"-->
+<!--                style="@style/TitleTextTheme"-->
+<!--                android:layout_margin="@dimen/margin_8"-->
+<!--                android:gravity="center"-->
+<!--                android:padding="@dimen/padding_4"-->
+<!--                android:text="More apps"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/dividerWallpaperChanger" />-->
 
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/txtChooseAppOptionDetails"
-                style="@style/SubTitleTextTheme"
-                android:gravity="center"
-                android:paddingLeft="@dimen/padding_4"
-                android:text="Experience all our stunning apps"
-                app:layout_constraintStart_toStartOf="@id/txtChooseAppOption"
-                app:layout_constraintTop_toBottomOf="@id/txtChooseAppOption" />
+<!--            <android.support.v7.widget.AppCompatTextView-->
+<!--                android:id="@+id/txtChooseAppOptionDetails"-->
+<!--                style="@style/SubTitleTextTheme"-->
+<!--                android:gravity="center"-->
+<!--                android:paddingLeft="@dimen/padding_4"-->
+<!--                android:text="Experience all our stunning apps"-->
+<!--                app:layout_constraintStart_toStartOf="@id/txtChooseAppOption"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtChooseAppOption" />-->
 
-            <ProgressBar
-                android:id="@+id/progressBarApps"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtChooseAppOptionDetails" />
+<!--            <ProgressBar-->
+<!--                android:id="@+id/progressBarApps"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:visibility="visible"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtChooseAppOptionDetails" />-->
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerApps"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/margin_8"
-                app:layout_constraintTop_toBottomOf="@id/txtChooseAppOptionDetails" />
+<!--            <android.support.v7.widget.RecyclerView-->
+<!--                android:id="@+id/recyclerApps"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/margin_8"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtChooseAppOptionDetails" />-->
 
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+<!--            <ProgressBar-->
+<!--                android:id="@+id/progressBar"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:visibility="gone"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
         </android.support.constraint.ConstraintLayout>
 
