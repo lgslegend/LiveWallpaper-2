@@ -19,9 +19,6 @@ import novumlogic.live.wallpaper.settings.adapter.GallerySourceImageListAdapter
 import novumlogic.live.wallpaper.settings.listeners.OnShowHideOptions
 import novumlogic.live.wallpaper.utility.*
 
-/**
- * Created by Priya Sindkar.
- */
 class GallerySourceImageListActivity : AppCompatActivity(), OnShowHideOptions {
     private var showDelete = false
     private var imageListAdapter: GallerySourceImageListAdapter? = null

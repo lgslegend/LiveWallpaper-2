@@ -5,9 +5,7 @@ import android.support.multidex.MultiDex
 import android.support.multidex.MultiDexApplication
 import com.facebook.drawee.backends.pipeline.Fresco
 
-/**
- * Created by Priya Sindkar.
- */
+
 class MyApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()

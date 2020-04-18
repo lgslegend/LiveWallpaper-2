@@ -10,9 +10,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
-/**
- * Created by Priya Sindkar.
- */
 class ApiConfig private constructor() {
 
     private object Holder {
@@ -24,30 +21,5 @@ class ApiConfig private constructor() {
         val BASE_URL = "android.resource://novumlogic.live.wallpaper/drawable/"
         val instance: ApiConfig by lazy { Holder.INSTANCE }
 
-        fun getRetrofit(baseURL: String): Retrofit {
-
-            return if (baseURL.contains("http")) {
-                Retrofit.Builder()
-                        .baseUrl(baseURL)
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build()
-            } else {
-                val url = HTTP_PREFIX.plus(baseURL)
-                Retrofit.Builder()
-                        .baseUrl(url)
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build()
-
-            }
-        }
-
-        private fun hasNetwork(context: Context): Boolean {
-            var isConnected = false // Initial Value
-            val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            val activeNetwork: NetworkInfo? = connectivityManager.activeNetworkInfo
-            if (activeNetwork != null && activeNetwork.isConnected)
-                isConnected = true
-            return isConnected
-        }
     }
 }
