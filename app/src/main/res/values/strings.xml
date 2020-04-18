@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Live Wallpaper</string>
-    <string name="wallpaper_service_label">Live Wallpaper</string>
+    <string name="app_name">Live Wallpapers</string>
+    <string name="wallpaper_service_label">Live Wallpapers</string>
     <string name="label_allow">Allow</string>
     <string name="label_deny">Deny</string>
     <string name="msg_need_permission_access">Allow permission to access gallery</string>
@@ -9,14 +9,8 @@
     <string name="label_select_image">Select Image</string>
     <string name="label_add_photo">Add Photo!</string>
     <string name="label_cancel">Cancel</string>
-    <!-- live wp ad ids -->
-    <string name="admob_key">ca-app-pub-9389063472515456~5591936989</string>
-    <string name="admob_banner_unit_id_key">ca-app-pub-9389063472515456/6858338079</string>
-    <string name="admob_interstitial_unit_id_key">ca-app-pub-9389063472515456/5642566546</string>
 
-    <!--<string name="admob_key">ca-app-pub-3940256099942544~3347511713</string>-->
-    <!--<string name="admob_banner_unit_id_key">ca-app-pub-3940256099942544/6300978111</string>-->
-    <!--<string name="admob_interstitial_unit_id_key">ca-app-pub-3940256099942544/1033173712</string>-->
+
 
     <string name="label_choose_from_gallery_max_10">Choose From Gallery (Max. 10)</string>
     <string name="label_choose_online_images">Choose From Default Images</string>

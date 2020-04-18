@@ -31,10 +31,7 @@ fun Activity.setLightStatusBar() {
     }
 }
 
-fun Activity.checkInternetConnection(): Boolean {
-    val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-    return connectivityManager.activeNetworkInfo != null && connectivityManager.activeNetworkInfo.isConnected
-}
+
 
 fun Activity.showNoInternetDialog() {
     val alertDialogBuilder = AlertDialog.Builder(this)

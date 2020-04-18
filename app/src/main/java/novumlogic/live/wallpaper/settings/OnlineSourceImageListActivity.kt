@@ -100,11 +100,9 @@ loaddatata()
                 downloadProgressBar.progress = index + 1
             }
             if (imagePath == "") {
-                if (checkInternetConnection()) {
+
                     listOfImagePaths[entry.key] = ImageUtils.saveToInternalStorage(this, ApiConfig.BASE_URL.plus(entry.value), entry.key)
-                } else {
-                    hasPendingDownload = true
-                }
+
             } else {
                 listOfImagePaths[entry.key] = imagePath
             }

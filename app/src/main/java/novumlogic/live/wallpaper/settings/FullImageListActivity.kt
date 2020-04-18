@@ -114,9 +114,7 @@ FullImageListActivity : AppCompatActivity(), OnImageSelectedListener {
      */
     override fun onImageSelected(imageURI: String, imageId: String) {
         val imagePath = ImageUtils.loadFilePathFromStorage(this, imageId)
-        if (imagePath == "" && !checkInternetConnection()) {
-            showNoInternetDialog()
-        } else {
+
             cardProgress.visibility = View.VISIBLE
             backDrop.visibility = View.VISIBLE
             disableUserTouch()
@@ -130,7 +128,7 @@ FullImageListActivity : AppCompatActivity(), OnImageSelectedListener {
                 }
                 finish()
             }
-        }
+        
     }
 
 }

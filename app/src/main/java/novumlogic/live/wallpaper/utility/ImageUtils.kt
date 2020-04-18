@@ -3,6 +3,7 @@ package novumlogic.live.wallpaper.utility
 import android.content.Context
 import android.content.ContextWrapper
 import android.net.Uri
+import android.widget.Toast
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
@@ -47,6 +48,7 @@ class ImageUtils {
                     context.saveImageToPreview(internalDataFilePath.absolutePath)
                     return internalDataFilePath.absolutePath
                 } catch (ex: Exception) {
+
                 }
                 fileOutputStream.close()
             }

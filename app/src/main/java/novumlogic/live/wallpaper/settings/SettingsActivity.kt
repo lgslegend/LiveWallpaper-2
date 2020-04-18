@@ -15,9 +15,8 @@ import android.widget.Toast
 import com.facebook.imagepipeline.common.ResizeOptions
 import com.facebook.imagepipeline.request.ImageRequestBuilder
 
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.firebase.iid.FirebaseInstanceId
-import com.google.firebase.iid.InstanceIdResult
+
+
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.progress_dialog.*
 import kotlinx.coroutines.GlobalScope
@@ -373,26 +372,7 @@ class SettingsActivity : AppCompatActivity(), OnImageSelectedListener, OnAppItem
 //        progressBarApps.visibility = View.GONE
 //    }
 
-    /**
-     *
-     * Fetch FCM token for passing in API request field
-     */
-    private suspend fun fetchFCMToken(): String = suspendCoroutine { continuation ->
-        // Get token
-        FirebaseInstanceId.getInstance().instanceId
-                .addOnCompleteListener(OnCompleteListener<InstanceIdResult> { task ->
-                    if (!task.isSuccessful) {
-                        continuation.resume("")
-                        return@OnCompleteListener
-                    }
 
-                    if (task.result != null) {
-                        continuation.resume(task.result!!.token)
-                    } else {
-                        continuation.resume("")
-                    }
-                })
-    }
 
     private fun showChooseImageHighlight() {
         constraintChooseImages.background = ContextCompat.getDrawable(this, R.drawable.option_selected)
